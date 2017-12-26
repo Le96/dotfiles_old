@@ -1,0 +1,20 @@
+set ambiwidth=double
+set autoindent
+set backspace=indent,eol,start
+set expandtab
+set hidden
+set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+set magic
+set nocompatible
+set nrformats-=octal
+set number
+set numberwidth=1
+set shiftwidth=2
+set smartindent
+set tabstop=2
+set title
+set virtualedit=block
+set whichwrap=b,s,[,],<,>
+
+syntax on
