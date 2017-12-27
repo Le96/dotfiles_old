@@ -51,6 +51,9 @@ NeoBundle 'Shougo/neomru.vim'
 NeoBundle 'scrooloose/nerdtree'
 " Easy toggle comment on/off
 NeoBundle 'tomtom/tcomment_vim'
+" Change ' and "
+NeoBundle 'tpope/vim-surround'
+
 
 
 " You can specify revision/branch/tag.
