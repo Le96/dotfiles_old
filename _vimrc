@@ -70,7 +70,7 @@ NeoBundleCheck
 "End NeoBundle Scripts-------------------------
 
 " http://blog.remora.cx/2010/12/vim-ref-with-unite.html
-" settings for unite.vim
+" Settings for unite.vim
 " Start on insert mode
 let g:unite_enable_start_insert=1
 " List of buffer
@@ -87,7 +87,7 @@ au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split
 " Window vertically separated open
 au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
 au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
-" end on <ESC><ESC>
+" End on <ESC><ESC>
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 
@@ -115,3 +115,35 @@ if has('syntax')
     augroup END
     call ZenkakuSpace()
 endif
+
+" https://sites.google.com/site/fudist/Home/vim-nihongo-ban/-vimrc-sample
+" Change color of status line on insert mode
+let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
+
+if has('syntax')
+  augroup InsertHook
+    autocmd!
+    autocmd InsertEnter * call s:StatusLine('Enter')
+    autocmd InsertLeave * call s:StatusLine('Leave')
+  augroup END
+endif
+
+let s:slhlcmd = ''
+function! s:StatusLine(mode)
+  if a:mode == 'Enter'
+    silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
+    silent exec g:hi_insert
+  else
+    highlight clear StatusLine
+    silent exec s:slhlcmd
+  endif
+endfunction
+
+function! s:GetHighlight(hi)
+  redir => hl
+  exec 'highlight '.a:hi
+  redir END
+  let hl = substitute(hl, '[\r\n]', '', 'g')
+  let hl = substitute(hl, 'xxx', '', '')
+  return hl
+endfunction
