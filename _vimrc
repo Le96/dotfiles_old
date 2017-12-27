@@ -1,4 +1,4 @@
-"basic preferences
+" basic preferences
 set ambiwidth=double
 set autoindent
 set backspace=indent,eol,start
@@ -109,3 +109,20 @@ set statusline+=%{fugitive#statusline()}
 " Auto enable on launching vim
 let g:indent_guides_enable_on_vim_startup = 1
 
+" http://inari.hatenablog.com/entry/2014/05/05/231307
+""""""""""""""""""""""""""""""
+" 全角スペースの表示
+""""""""""""""""""""""""""""""
+function! ZenkakuSpace()
+    highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
+endfunction
+
+if has('syntax')
+    augroup ZenkakuSpace
+        autocmd!
+        autocmd ColorScheme * call ZenkakuSpace()
+        autocmd VimEnter,WinEnter,BufRead * let w:m1=matchadd('ZenkakuSpace', '　')
+    augroup END
+    call ZenkakuSpace()
+endif
+""""""""""""""""""""""""""""""
