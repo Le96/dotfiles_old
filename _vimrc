@@ -22,7 +22,7 @@ syntax on
 
 "NeoBundle Scripts-----------------------------
 if &compatible
-  set nocompatible               " Be iMproved
+  set nocompatible " Be iMproved
 endif
 
 " Required:
@@ -57,6 +57,8 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 " Interpretable ANSI escape color code
 NeoBundle 'vim-scripts/AnsiEsc.vim'
+" Visualize unnecessary spaces on end of line
+NeoBundle 'bronson/vim-trailing-whitespace'
 
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
