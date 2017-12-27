@@ -205,9 +205,9 @@ function! s:GetHighlight(hi)
 endfunction
 
 " Auto complete closing bracket
-imap { {}<LEFT>
-imap [ []<LEFT>
-imap ( ()<LEFT>
+inoremap {<Enter> {}<LEFT><CR><ESC><S-o>
+inoremap [<Enter> []<LEFT><CR><ESC><S-o>
+inoremap (<Enter> ()<LEFT><CR><ESC><S-o>
 
 " Restore last cursor position
 if has("autocmd")
