@@ -108,12 +108,12 @@ function! ZenkakuSpace()
 endfunction
 
 if has('syntax')
-    augroup ZenkakuSpace
-        autocmd!
-        autocmd ColorScheme * call ZenkakuSpace()
-        autocmd VimEnter,WinEnter,BufRead * let w:m1=matchadd('ZenkakuSpace', '　')
-    augroup END
-    call ZenkakuSpace()
+  augroup ZenkakuSpace
+    autocmd!
+    autocmd ColorScheme * call ZenkakuSpace()
+    autocmd VimEnter,WinEnter,BufRead * let w:m1=matchadd('ZenkakuSpace', '　')
+  augroup END
+  call ZenkakuSpace()
 endif
 
 " https://sites.google.com/site/fudist/Home/vim-nihongo-ban/-vimrc-sample
@@ -152,4 +152,11 @@ endfunction
 imap { {}<LEFT>
 imap [ []<LEFT>
 imap ( ()<LEFT>
-imap < <><LEFT>
+
+" Restore last cursor position
+if has("autocmd")
+  autocmd BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \ exe "normal! g'\"" |
+        \ endif
+endif
