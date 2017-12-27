@@ -53,8 +53,8 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'tomtom/tcomment_vim'
 " Change ' and "
 NeoBundle 'tpope/vim-surround'
-
-
+" Guide indent by color
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -100,4 +100,8 @@ au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
 autocmd QuickFixCmdPost *grep* cwindow
 " Show current Git branch on status line
 set statusline+=%{fugitive#statusline()}
+
+" for vim-indent-guides
+" Auto enable on launching vim
+let g:indent_guides_enable_on_vim_startup = 1
 
