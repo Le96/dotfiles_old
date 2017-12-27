@@ -1,4 +1,5 @@
 " basic preferences
+syntax on
 " double width for Zenkaku letters
 set ambiwidth=double
 " auto complete indent
@@ -68,8 +69,6 @@ set whichwrap=b,s,h,l,[,],<,>
 " command line complete
 set wildmenu
 
-syntax on
-
 " NeoBundle Scripts
 " Be iMproved
 if &compatible
@@ -110,6 +109,8 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'tomasr/molokai'
 " Auto complete closing bracket
 NeoBundle 'jiangmiao/auto-pairs'
+" PEP8
+NeoBundle 'Vimjas/vim-python-pep8-indent'
 
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -156,8 +157,8 @@ set statusline+=%{fugitive#statusline()}
 let g:indent_guides_enable_on_vim_startup = 1
 
 " for molokai
-colorscheme molokai
-highlight Normal ctermbg=none
+"colorscheme molokai
+"highlight Normal ctermbg=none
 
 " http://inari.hatenablog.com/entry/2014/05/05/231307
 " Visualize ZenkakuSpace
