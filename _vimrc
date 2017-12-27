@@ -20,19 +20,16 @@ set whichwrap=b,s,[,],<,>
 
 syntax on
 
-"NeoBundle Scripts-----------------------------
+" NeoBundle Scripts
+" Be iMproved
 if &compatible
-  set nocompatible " Be iMproved
+  set nocompatible
 endif
 
-" Required:
 set runtimepath+=/home/le96/.vim/bundle/neobundle.vim/
-
-" Required:
 call neobundle#begin(expand('/home/le96/.vim/bundle'))
 
 " Let NeoBundle manage NeoBundle
-" Required:
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " Add or remove your Bundles here:
@@ -63,10 +60,8 @@ NeoBundle 'bronson/vim-trailing-whitespace'
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
 
-" Required:
 call neobundle#end()
 
-" Required:
 filetype plugin indent on
 
 " If there are uninstalled bundles found on startup,
@@ -75,29 +70,26 @@ NeoBundleCheck
 "End NeoBundle Scripts-------------------------
 
 " http://blog.remora.cx/2010/12/vim-ref-with-unite.html
-""""""""""""""""""""""""""""""
-" Unit.vimの設定
-""""""""""""""""""""""""""""""
-" 入力モードで開始する
+" settings for unite.vim
+" Start on insert mode
 let g:unite_enable_start_insert=1
-" バッファ一覧
+" List of buffer
 noremap <C-P> :Unite buffer<CR>
-" ファイル一覧
+" List of file
 noremap <C-N> :Unite -buffer-name=file file<CR>
-" 最近使ったファイルの一覧
+" List of recentry used file
 noremap <C-Z> :Unite file_mru<CR>
-" sourcesを「今開いているファイルのディレクトリ」とする
+" Sources as current directory
 noremap :uff :<C-u>UniteWithBufferDir file -buffer-name=file<CR>
-" ウィンドウを分割して開く
+" Window separated open
 au FileType unite nnoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
 au FileType unite inoremap <silent> <buffer> <expr> <C-J> unite#do_action('split')
-" ウィンドウを縦に分割して開く
+" Window vertically separated open
 au FileType unite nnoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
 au FileType unite inoremap <silent> <buffer> <expr> <C-K> unite#do_action('vsplit')
-" ESCキーを2回押すと終了する
+" end on <ESC><ESC>
 au FileType unite nnoremap <silent> <buffer> <ESC><ESC> :q<CR>
 au FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>:q<CR>
-""""""""""""""""""""""""""""""
 
 " for vim-fugitive
 " Show QuickFix List after grep-search
@@ -110,9 +102,7 @@ set statusline+=%{fugitive#statusline()}
 let g:indent_guides_enable_on_vim_startup = 1
 
 " http://inari.hatenablog.com/entry/2014/05/05/231307
-""""""""""""""""""""""""""""""
-" 全角スペースの表示
-""""""""""""""""""""""""""""""
+" Visualize ZenkakuSpace
 function! ZenkakuSpace()
     highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 endfunction
@@ -125,4 +115,3 @@ if has('syntax')
     augroup END
     call ZenkakuSpace()
 endif
-""""""""""""""""""""""""""""""
