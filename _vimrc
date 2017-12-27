@@ -49,6 +49,9 @@ NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/neomru.vim'
 " Tree fileopen
 NeoBundle 'scrooloose/nerdtree'
+" Easy toggle comment on/off
+NeoBundle 'tomtom/tcomment_vim'
+
 
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
