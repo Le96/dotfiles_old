@@ -4,7 +4,7 @@ set ambiwidth=double
 " auto complete indent
 set autoindent
 " dark theme for background
-set background=dark
+" set background=dark
 " enable backspace on insert mode
 set backspace=indent,eol,start
 " backup directory
