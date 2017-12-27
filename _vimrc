@@ -147,3 +147,9 @@ function! s:GetHighlight(hi)
   let hl = substitute(hl, 'xxx', '', '')
   return hl
 endfunction
+
+" Auto complete closing bracket
+imap { {}<LEFT>
+imap [ []<LEFT>
+imap ( ()<LEFT>
+imap < <><LEFT>
