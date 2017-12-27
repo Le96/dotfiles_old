@@ -108,6 +108,8 @@ NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
 " enable color scheme 'molokai'
 NeoBundle 'tomasr/molokai'
+" Auto complete closing bracket
+NeoBundle 'jiangmiao/auto-pairs'
 
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -203,11 +205,6 @@ function! s:GetHighlight(hi)
   let hl = substitute(hl, 'xxx', '', '')
   return hl
 endfunction
-
-" Auto complete closing bracket
-inoremap {<Enter> {}<LEFT><CR><ESC><S-o>
-inoremap [<Enter> []<LEFT><CR><ESC><S-o>
-inoremap (<Enter> ()<LEFT><CR><ESC><S-o>
 
 " Restore last cursor position
 if has("autocmd")
