@@ -55,6 +55,8 @@ NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/vim-surround'
 " Guide indent by color
 NeoBundle 'nathanaelkane/vim-indent-guides'
+" Interpretable ANSI escape color code
+NeoBundle 'vim-scripts/AnsiEsc.vim'
 
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
