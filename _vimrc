@@ -111,6 +111,9 @@ NeoBundle 'tomasr/molokai'
 NeoBundle 'jiangmiao/auto-pairs'
 " PEP8
 NeoBundle 'Vimjas/vim-python-pep8-indent'
+" fold Python
+NeoBundle 'tweekmonster/braceless.vim'
+
 
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -216,3 +219,6 @@ if has("autocmd")
         \ exe "normal! g'\"" |
         \ endif
 endif
+
+" for braceless
+autocmd FileType python BracelessEnable +indent +fold
