@@ -1,22 +1,72 @@
 " basic preferences
+" double width for Zenkaku letters
 set ambiwidth=double
+" auto complete indent
 set autoindent
+" dark theme for background
+set background=dark
+" enable backspace on insert mode
 set backspace=indent,eol,start
+" backup directory
+set backupdir=$HOME/.vim/backup
+" start file manager on directory of buffered file
+set browsedir=buffer
+" used 2 line for command line
+set cmdheight=2
+" <Tab> to spaces
 set expandtab
+" enable open file when there are unsaved files
 set hidden
+" hilight searching word
+set hlsearch
+" always show status line on the 2nd last line
+set laststatus=2
+" visualise invisible characters
 set list
+" ... by there characters
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+" always think meta characters as magic-mode when searching
 set magic
+" be iMproved (actually, unneed)
 set nocompatible
+" not use swap file
+set noswapfile
+" not use octal
 set nrformats-=octal
+" line number
 set number
+" minimum width for line number
 set numberwidth=1
+" ruler
+set ruler
+" width of indent
 set shiftwidth=2
+" show command
+set showcmd
+" show corresponding bracket and brace
+set showmatch
+" auto ignoring upper/lowercase when searching
+set smartcase
+" enable smart indent
 set smartindent
+" indent shitwidth number when <Tab> on beginning of line
+set smarttab
+" informations on status line
+set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+" ... and add current git branch
+set statusline+=%{fugitive#statusline()}
+" tag file
+set tags=~/.tags
+" width of <Tab>
 set tabstop=2
+" show file name on title of terminal
 set title
-set virtualedit=block
-set whichwrap=b,s,[,],<,>
+" enable virtual edit (movable cursor to non-character area)
+set virtualedit=all
+" movable prev/next line by key which move cursor to left/right
+set whichwrap=b,s,h,l,[,],<,>
+" command line complete
+set wildmenu
 
 syntax on
 
@@ -56,6 +106,8 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'vim-scripts/AnsiEsc.vim'
 " Visualize unnecessary spaces on end of line
 NeoBundle 'bronson/vim-trailing-whitespace'
+" enable color scheme 'molokai'
+NeoBundle 'tomasr/molokai'
 
 " You can specify revision/branch/tag.
 NeoBundle 'Shougo/vimshell', { 'rev' : '3787e5' }
@@ -100,6 +152,10 @@ set statusline+=%{fugitive#statusline()}
 " for vim-indent-guides
 " Auto enable on launching vim
 let g:indent_guides_enable_on_vim_startup = 1
+
+" for molokai
+colorscheme molokai
+highlight Normal ctermbg=none
 
 " http://inari.hatenablog.com/entry/2014/05/05/231307
 " Visualize ZenkakuSpace
