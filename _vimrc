@@ -155,6 +155,8 @@ set statusline+=%{fugitive#statusline()}
 " for vim-indent-guides
 " Auto enable on launching vim
 let g:indent_guides_enable_on_vim_startup = 1
+" only first
+let g:indent_guides_guide_size = 1
 
 " for molokai
 "colorscheme molokai
