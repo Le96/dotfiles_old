@@ -80,6 +80,8 @@ alias l='ls -CF'
 # alertのalias
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 # 追いalias
+alias c='clear'
+alias goodbye='shutdown -h now'
 alias up='sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get clean && sudo apt-get autoclean && sudo apt-get check'
 # pathを通す
 export PATH=$PATH:~/.local/bin/
