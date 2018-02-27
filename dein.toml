@@ -87,16 +87,12 @@ let g:indent_guides_guide_size = 1
 '''
 
 [[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+
+[[plugins]]
 # Tree fileopen
 repo = 'scrooloose/nerdtree'
-
-# [[plugins]]
-# # enable color scheme 'molokai'
-# repo = 'tomasr/molokai'
-# hook_add = '''
-# colorscheme molokai
-# highlight Normal ctermbg=none
-# '''
 
 [[plugins]]
 # Easy toggle comment on/off
@@ -107,8 +103,6 @@ repo = 'tpope/vim-fugitive'
 hook_add = '''
 " Show QuickFix List after grep-search
 autocmd QuickFixCmdPost *grep* cwindow
-" Show current Git branch on status line
-set statusline+=%{fugitive#statusline()}
 '''
 
 [[plugins]]
@@ -123,21 +117,17 @@ autocmd FileType python BracelessEnable +indent +fold
 '''
 
 [[plugins]]
+repo = 'vim-airline/vim-airline'
+hook_add = '''
+let g:airline#extensions#tabline#buffer_idx_mode = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#virtualenv#enabled = 1
+let g:airline_powerline_fonts = 1
+'''
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+
+[[plugins]]
 # Interpretable ANSI escape color code
 repo = 'vim-scripts/AnsiEsc.vim'
-
-# [[plugins]]
-# # color scheme
-# repo = 'w0ng/vim-hybrid'
-# hook_add = '''
-# set background=dark
-# " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
-# " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
-# au MyAutoCmd VimEnter * nested colorscheme hybrid
-# '''
-
-
-# plugins with depends
-[[plugins]]
-repo = 'osyo-manga/vim-precious'
-depends = ['context_filetype.vim']

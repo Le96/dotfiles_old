@@ -7,7 +7,7 @@ augroup END
 let s:config_home = empty($XDG_CONFIG_HOME) ? expand('~/.config') : $XDG_CONFIG_HOME
 
 " basic config
-set ambiwidth=double  " double width for Zenkaku letters
+"set ambiwidth=double  " double width for Zenkaku letters
 set autoindent  " auto complete indent
 set backspace=indent,eol,start  " enable backspace on insert mode
 let &backupdir=s:config_home . '/nvim/backup'  " backup directory
