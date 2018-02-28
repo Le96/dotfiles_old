@@ -85,8 +85,6 @@ alias goodbye='shutdown -h now'
 alias up='sudo apt-get update && sudo apt-get upgrade -y && sudo apt-get dist-upgrade -y && sudo apt-get autoremove -y && sudo apt-get clean && sudo apt-get autoclean && sudo apt-get check'
 # pathを通す
 export PATH=$PATH:~/.local/bin/
-powerline-daemon -q
-. ~/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 # powerline-shell
 function powerline_precmd() {
   PS1="$(powerline-shell --shell zsh $?)"
